@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Responsive utilities optimized for specific device ranges */
+@layer utilities {
+  /* Typography scaling for different device categories */
+  .text-responsive-xs {
+    @apply text-xs xs:text-sm; /* Extra small phones → Small phones */
+  }
+  
+  .text-responsive-sm {
+    @apply text-sm xs:text-base; /* Small phones → Medium phones */
+  }
+  
+  .text-responsive-base {
+    @apply text-base xs:text-lg; /* Small phones → Medium phones */
+  }
+  
+  .text-responsive-lg {
+    @apply text-lg xs:text-xl md:text-2xl; /* Small phones → Large phones → Tablet Portrait */
+  }
+  
+  .text-responsive-xl {
+    @apply text-xl xs:text-2xl md:text-3xl xl:text-4xl; /* Small phones → Large phones → Tablet Landscape → Laptop */
+  }
+  
+  .text-responsive-2xl {
+    @apply text-2xl xs:text-3xl md:text-4xl xl:text-5xl 2xl:text-6xl; /* Small phones → Large phones → Tablet Landscape → Laptop → Large Desktop */
+  }
+  
+  .text-responsive-3xl {
+    @apply text-3xl xs:text-4xl md:text-5xl xl:text-6xl 2xl:text-7xl; /* For hero titles on large displays */
+  }
+  
+  /* Spacing optimized for device categories */
+  .p-responsive {
+    @apply p-2 xs:p-3 sm:p-4 md:p-6 lg:p-12 xl:p-16 2xl:p-20; /* Extra small → Large Desktop */
+  }
+  
+  .p-responsive-half {
+    @apply p-2 xs:p-3 sm:p-4 md:p-6 lg:p-6 xl:p-8 2xl:p-10; /* Half padding for large screens */
+  }
+  
+  .px-responsive {
+    @apply px-2 xs:px-3 sm:px-4 md:px-6 lg:px-12 xl:px-16 2xl:px-20;
+  }
+  
+  .py-responsive {
+    @apply py-2 xs:py-3 sm:py-4 md:py-6 lg:py-8 xl:py-10 2xl:py-12;
+  }
+  
+  .gap-responsive {
+    @apply gap-2 xs:gap-3 sm:gap-4 md:gap-6 lg:gap-8 xl:gap-10 2xl:gap-12;
+  }
+  
+  /* Container max-widths for different device categories */
+  .container-responsive {
+    @apply max-w-xs xs:max-w-sm sm:max-w-md md:max-w-2xl lg:max-w-4xl xl:max-w-6xl 2xl:max-w-7xl;
+  }
+  
+  /* Grid responsive utilities */
+  .grid-responsive-1 {
+    @apply grid-cols-1;
+  }
+  
+  .grid-responsive-2 {
+    @apply grid-cols-1 xs:grid-cols-2;
+  }
+  
+  .grid-responsive-3 {
+    @apply grid-cols-1 xs:grid-cols-2 md:grid-cols-3;
+  }
+  
+  .grid-responsive-4 {
+    @apply grid-cols-1 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4;
+  }
+  
+  .grid-responsive-5 {
+    @apply grid-cols-2 xs:grid-cols-3 sm:grid-cols-4 md:grid-cols-5;
+  }
+  
+  /* Mobile-first navigation utilities */
+  .nav-mobile {
+    @apply lg:hidden;
+  }
+  
+  .nav-desktop {
+    @apply hidden lg:block;
+  }
+  
+  /* Touch-friendly sizing for mobile devices */
+  .touch-target {
+    @apply min-h-[44px] min-w-[44px]; /* Minimum touch target size */
+  }
+  
+  /* Optimized spacing for extra small devices */
+  .spacing-xs {
+    @apply space-y-1 xs:space-y-2;
+  }
+  
+  .spacing-sm {
+    @apply space-y-2 xs:space-y-3 sm:space-y-4;
+  }
+  
+  .spacing-md {
+    @apply space-y-3 xs:space-y-4 sm:space-y-6 md:space-y-8;
+  }
+}
+
+:root {
+  --primary: 30 64 175;
+  --primary-foreground: 248 250 252;
+  --secondary: 5 150 105;
+  --secondary-foreground: 248 250 252;
+  --accent: 234 88 12;
+  --accent-foreground: 248 250 252;
+  --background: 248 250 252;
+  --foreground: 15 23 42;
+  --muted: 241 245 249;
+  --muted-foreground: 100 116 139;
+  --border: 226 232 240;
+  --success: 5 150 105;
+  --destructive: 239 68 68;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}

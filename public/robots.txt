@@ -1,0 +1,25 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.goetheb1prep.com/sitemap.xml
+
+# Disallow admin and API routes
+Disallow: /admin/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /uploads/
+
+# Allow important pages
+Allow: /
+Allow: /speaking
+Allow: /teil1
+Allow: /teil3
+Allow: /results
+Allow: /subscription
+Allow: /login
+Allow: /register
+Allow: /privacy-policy
+
+# Crawl delay (optional)
+Crawl-delay: 1
